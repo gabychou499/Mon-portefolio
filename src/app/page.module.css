@@ -1,0 +1,116 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Bento Grid */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  auto-rows: 250px;
+}
+
+.bentoItem {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.bentoItem::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.bentoItem:hover::before {
+  opacity: 0.15;
+}
+
+.bentoContent {
+  position: relative;
+  z-index: 1;
+}
+
+.folderIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.itemTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.itemDesc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Specific Grid Placements */
+.profile {
+  grid-column: span 8;
+  grid-row: span 2;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+}
+
+.projectsFolder {
+  grid-column: span 4;
+  grid-row: span 1;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.skills {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.contact {
+  grid-column: span 12;
+  grid-row: span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .profile { grid-column: span 12; }
+  .projectsFolder { grid-column: span 6; }
+  .skills { grid-column: span 6; }
+}
+
+@media (max-width: 768px) {
+  .projectsFolder { grid-column: span 12; }
+  .skills { grid-column: span 12; }
+  .title { font-size: 2.5rem; }
+}

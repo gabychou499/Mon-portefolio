@@ -1,0 +1,8 @@
+{
+  "title": "Projet Alpha",
+  "description": "Une application web révolutionnaire développée avec Next.js et React.",
+  "date": "2026-05",
+  "tags": ["Next.js", "React", "Frontend"],
+  "image": "/projet-alpha.jpg",
+  "content": "Ce projet a été conçu pour démontrer mes capacités à créer des interfaces utilisateurs complexes et performantes. L'architecture repose sur des composants réutilisables et une gestion d'état centralisée."
+}
