@@ -1,0 +1,7 @@
+{
+  "title": "Les Avengers - Super-Héros",
+  "description": "Page web interactive présentant les super-héros Marvel.",
+  "date": "2025",
+  "tags": ["HTML5", "CSS3"],
+  "content": "Un site vitrine développé pour présenter les membres de l'équipe des Avengers. Il intègre une navigation fluide, une présentation détaillée des héros (Iron Man, Captain America, Thor) avec leurs pouvoirs respectifs, ainsi qu'un tableau de statistiques de combat stylisé en CSS pur. Le design est 100% responsive et utilise la typographie Nunito."
+}

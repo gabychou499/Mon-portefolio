@@ -1,0 +1,206 @@
+<!-- page web basique en html5 -->
+<!doctype html>
+
+<!-- on met la page en francais -->
+<html lang="fr">
+  <!-- infos cachées de la page (liens, titre...) -->
+  <head>
+    <!-- pour pas avoir de bugs avec les accents -->
+    <meta charset="UTF-8" />
+
+    <!-- pour que ca marche bien sur mobile meme si jai viré le media query -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- petit texte pour les moteurs de recherche -->
+    <meta name="description" content="Les Avengers - Super-Héros Marvel" />
+
+    <!-- le nom sur l'onglet en haut -->
+    <title>Les Avengers - Super-Héros</title>
+
+    <!-- j'utilise une police google qui s'appelle Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- je relie mon fichier de style css qui est ds le dossier css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <!-- debut de la partie visible du site -->
+  <body>
+    <!-- le haut de la page qui reste fixé -->
+    <header>
+      <h1>AVENGERS</h1>
+      <!-- mon menu avec les liens -->
+      <nav>
+        <!-- accueil est la page active de base -->
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#heros">Héros</a>
+        <a href="#pouvoirs">Pouvoirs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- le bloc principal avec tout le contenu -->
+    <main>
+      <!-- la zone de bienvenue -->
+      <section id="accueil">
+        <h2>Bienvenue chez les Avengers</h2>
+
+        <p>
+          Les plus <strong>puissants héros de la Terre</strong> s'unissent pour
+          <u><i>protéger le monde.</i></u>
+        </p>
+
+        <!-- petite image de lexemple, s'ouvre ds un nv onglet -->
+        <a href="img/equipe.png" target="_blank">
+          <img src="img/equipe.png" alt="Avengers" width="400" />
+        </a>
+
+        <p>
+          Les Avengers sont une équipe de super-héros qui luttent pour la
+          justice.
+        </p>
+
+        <!-- faux bouton qui descend vers la section heros -->
+        <a href="#heros">Voir les héros</a>
+      </section>
+
+      <!-- liste de mes heros -->
+      <section id="heros">
+        <h2>Nos Super-Héros</h2>
+
+        <!-- premier perso -->
+        <article>
+          <img src="img/ironman.png" alt="Iron Man" width="150" />
+          <div class="description">
+            <h3>Iron Man</h3>
+            <p><strong>Tony Stark</strong>, génie inventeur et milliardaire.</p>
+            <h4>Pouvoirs et capacités :</h4>
+            <ul>
+              <li>Armure high-tech propulsée par réacteur arc</li>
+              <li>Vol supersonique</li>
+              <li>Intelligence artificielle intégrée (J.A.R.V.I.S.)</li>
+              <li>Rayons répulseurs à haute énergie</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2eme perso -->
+        <article>
+          <img src="img/captain.png" alt="Captain America" width="150" />
+          <div class="description">
+            <h3>Captain America</h3>
+            <p><strong>Steve Rogers</strong>, premier Avenger.</p>
+            <h4>Pouvoirs et capacités :</h4>
+            <ul>
+              <li>Force surhumaine grâce au sérum Super-Soldat</li>
+              <li>Bouclier vibranium indestructible</li>
+              <li>Agilité et endurance exceptionnelles</li>
+              <li>Stratège et leader né au combat</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3eme perso -->
+        <article>
+          <img src="img/thor.png" alt="Thor" width="150" />
+          <div class="description">
+            <h3>Thor</h3>
+            <p><strong>Thor Odinson</strong>, Dieu du Tonnerre d'Asgard.</p>
+            <h4>Pouvoirs et capacités :</h4>
+            <ul>
+              <li>Contrôle de la foudre et des tempêtes</li>
+              <li>Marteau Mjöllnir aux pouvoirs divins</li>
+              <li>Force divine et quasi-invulnérabilité</li>
+              <li>Vol via le Mjöllnir</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- la partie avec le gros tableau design -->
+      <section id="pouvoirs">
+        <h2>Pouvoirs et Statistiques</h2>
+
+        <p>Tous les pouvoirs réunis des Avengers</p>
+
+        <!-- bidouille pour les bordures (tout est géré en css mtn) -->
+        <table border="0">
+          <caption>
+            Statistiques de combat des Avengers
+          </caption>
+
+          <!-- entete du tab -->
+          <thead>
+            <tr>
+              <th scope="col">Héros</th>
+              <th scope="col">Force</th>
+              <th scope="col">Vitesse</th>
+              <th scope="col">Intelligence</th>
+              <th scope="col">Énergie</th>
+            </tr>
+          </thead>
+
+          <!-- corps du tab -->
+          <tbody>
+            <tr>
+              <td>Iron Man</td>
+              <td>85</td>
+              <td>90</td>
+              <td>100</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>Captain America</td>
+              <td>95</td>
+              <td>85</td>
+              <td>80</td>
+              <td>70</td>
+            </tr>
+            <tr>
+              <td>Thor</td>
+              <td>100</td>
+              <td>95</td>
+              <td>85</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- tout en bas les infos -->
+    <footer id="contact">
+      <h2>Contact et Informations</h2>
+
+      <div class="footer-sections">
+        <div>
+          <h3>Avengers Initiative</h3>
+          <p>Les plus puissants héros...</p>
+        </div>
+
+        <div>
+          <h3>Navigation</h3>
+          <p>Liens rapides</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p>Avengers Tower</p>
+          <a href="mailto:contact@avengers.com">contact@avengers.com</a>
+        </div>
+      </div>
+
+      <!-- ligne de separation, je lai cachée en CSS pr metttre un border au copyright a la place -->
+      <hr />
+
+      <div class="copyright">
+        <p>© 2025 Avengers • Tous droits réservés • Assemblons-nous !</p>
+      </div>
+    </footer>
+  </body>
+</html>

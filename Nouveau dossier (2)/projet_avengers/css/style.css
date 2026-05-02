@@ -1,0 +1,450 @@
+/* reset css de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* pour gerer les tailles */
+}
+
+/* fond de la page avec un degradé bleu */
+body {
+  background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
+  background-attachment: fixed;
+  /* le fond bouge pas quand on scroll */
+  color: #f0f4f8;
+  /* texte presque blanc */
+  min-height: 100vh;
+  /* prend toute la hauteur */
+  font-family: "Nunito", sans-serif;
+  font-size: 100%;
+}
+
+/* bandeau du haut, je l'ai mis fixe pour qu'il reste en haut */
+header {
+  background: rgba(10, 15, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  /* petite ligne dorée en bas */
+}
+
+/* gros titre stylé */
+h1 {
+  color: #FFD700;
+  letter-spacing: 5px;
+  /* espacer les lettres un peu */
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
+  /* ombre pour faire ressortir */
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* le menu */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0.5rem 0;
+}
+
+/* les boutons du menu */
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  /* enlever le souligné */
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px 24px;
+  border-radius: 30px;
+  /* boutons ronds */
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* quand on est sur la page actuelle */
+nav a.active {
+  color: #0b132b;
+  background-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  border-color: #FFD700;
+}
+
+/* effet au survol des autres liens */
+nav a:hover:not(.active) {
+  border-color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-2px);
+  /* remonte un peu */
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* le bloc principal */
+main {
+  max-width: 1200px;
+  /* pas trop large sur les gros ecran */
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+/* la boite d'accueil */
+main #accueil {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* bordure legere */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  margin: 1rem auto 4rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* titre h2 de l'accueil */
+main #accueil h2 {
+  font-size: 2.8rem;
+  color: #ffd700;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+}
+
+/* textes de la zone accueil */
+main #accueil p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  max-width: 800px;
+  margin: 0 auto 25px;
+}
+
+/* bouton stylé pour voir les heros */
+main #accueil>a {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFD700, #FFAA00);
+  color: #0b132b;
+  font-weight: 800;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* effet hover du bouton */
+main #accueil>a:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* style de base pour toutes les images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* animation de rebond */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* quand on passe la souris sur une image */
+img:hover {
+  transform: scale(1.04) translateY(-5px);
+  /* on grossit un peu l'image */
+  border-color: #ffd700;
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.25);
+}
+
+/* grande image de l'equipe */
+#accueil img {
+  max-width: 500px;
+  margin: 30px auto;
+  display: block;
+}
+
+/* section de la liste des heros */
+#heros {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  /* on les met les uns sous les autres */
+  gap: 40px;
+}
+
+/* titre heros */
+#heros h2 {
+  color: #ffd700;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* carte pour chaque perso */
+article {
+  background: rgba(16, 25, 45, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 35px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  display: flex;
+  /* pour mettre le texte a cote de l'image */
+  align-items: center;
+  gap: 40px;
+}
+
+/* survol de la carte (l'effet lévitation qui rend bien) */
+article:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.15);
+  background: rgba(16, 25, 45, 0.65);
+}
+
+/* image du perso dans la carte */
+article img {
+  width: 200px;
+  flex-shrink: 0;
+  /* pour eviter que l'image soit ecrasée */
+  margin: 0;
+}
+
+/* la boite contenant le texte du heros */
+.description {
+  flex-grow: 1;
+}
+
+.description h3 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.description p {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.description h4 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+/* enlever les puces noires moches */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* styling de chaque element de liste (pouvoir) */
+li {
+  background: rgba(0, 0, 0, 0.25);
+  margin: 10px 0;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border-left: 5px solid #ffd700;
+  /* ptite barre jaune devant */
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+}
+
+/* quand on survole un pouvoir ca le decale un peu */
+li:hover {
+  background: rgba(255, 215, 0, 0.12);
+  transform: translateX(8px);
+  /* glisse vers la droite */
+  color: #fff;
+}
+
+/* bloc pouvoir centré */
+#pouvoirs {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* titre pouvoir */
+#pouvoirs h2 {
+  color: #ffd700;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+}
+
+#pouvoirs>p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 35px;
+}
+
+/* le tableau des stats */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* coller les cellules */
+  background: rgba(16, 25, 45, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  /* important pour que le radius marche sur le fond */
+  margin: 0 auto;
+}
+
+table caption {
+  caption-side: top;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #FFD700;
+  font-style: auto;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* tetes de colonnes du tableau */
+th {
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+/* cellules de mon tableau */
+td {
+  padding: 18px 15px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+  /* ligne de separation fine */
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* une ligne sur 2 est un peu differente */
+tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* la ligne s'eclaire quand la souris passe dessus */
+tr:hover td {
+  background: rgba(255, 215, 0, 0.08);
+  color: #FFD700;
+  transition: all 0.2s ease;
+}
+
+/* bas de page (footer) */
+footer {
+  background: rgba(5, 10, 20, 0.95);
+  border-top: 3px solid rgba(255, 215, 0, 0.5);
+  /* grosse ligne or en haut */
+  padding: 60px 20px 20px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* titre ds le footer */
+footer h2 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+/* colonnes ds le footer en ligne */
+.footer-sections {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  /* ca passe a la ligne si ecran trop petit meme sans media query */
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+.footer-sections>div {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+/* titres des petites rubriques du footer */
+.footer-sections h3 {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* textes du footer */
+.footer-sections p {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* changer la couleur des liens du footer */
+.footer-sections a {
+  color: #ffd700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.footer-sections a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* la partie copyright tt en bas */
+.copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  /* petite separation */
+  padding-top: 25px;
+}
+
+.copyright p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* on cache la balise hr pcq j'ai mis un border top, c'est mieux */
+hr {
+  display: none;
+}

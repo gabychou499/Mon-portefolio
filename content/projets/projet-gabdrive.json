@@ -1,0 +1,7 @@
+{
+  "title": "GabDrive - Stockage Personnel",
+  "description": "Un clone complet de Google Drive fonctionnant directement dans le navigateur.",
+  "date": "2026",
+  "tags": ["JavaScript", "LocalForage", "JSZip", "Frontend"],
+  "content": "GabDrive est une application web avancée de stockage de fichiers. Elle reproduit les fonctionnalités d'un Cloud personnel (upload, gestion de dossiers, favoris, corbeille, recherche) avec un design moderne (police Syne, mode sombre). L'application gère le stockage localement dans le navigateur via LocalForage et permet même d'exporter ou restaurer l'intégralité du 'Drive' sous forme d'archives compressées grâce à JSZip."
+}
